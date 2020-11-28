@@ -1,7 +1,5 @@
 # project-sports-scoring
 
-# Many to Many Zombies Lab
-
 ### Sports scoring
 An app that lets a sports fan keep track of their favourite sports league.
 
