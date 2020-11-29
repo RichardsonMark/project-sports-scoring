@@ -5,7 +5,7 @@
 
 {% for team in teams %}
     <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
-  
+    <a href="/clubs/{{ team.id }}/edit">Edit</a>
 {% endfor %}
 
 {% endblock %}
