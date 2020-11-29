@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-This is where team information will go.
+<h1>Team information</h1>
+
+{% for team in teams %}
+    <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
+  
+{% endfor %}
 
 {% endblock %}

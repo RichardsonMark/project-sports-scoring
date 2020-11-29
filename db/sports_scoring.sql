@@ -1,13 +1,7 @@
-DROP TABLE IF EXISTS fixtures;
-DROP TABLE IF EXISTS players;
+-- DROP TABLE IF EXISTS fixtures;
 DROP TABLE IF EXISTS teams;
+-- DROP TABLE IF EXISTS players;
 
-CREATE TABLE players (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    player_info VARCHAR(255),
-    games_played INT
-);
 
 CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
@@ -20,11 +14,18 @@ CREATE TABLE teams (
     fixtures_drawn INT,
     fixtures_lost INT,
     points INT,
-    player_id INT REFERENCES players(id)
+    score INT
 );
 
-CREATE TABLE fixtures (
-    id SERIAL PRIMARY KEY,
-    team1_id SERIAL REFERENCES teams(id),
-    team2_id SERIAL REFERENCES teams(id)
-);
+-- CREATE TABLE players (
+--     id SERIAL PRIMARY KEY,
+--     name VARCHAR(255),
+--     player_info VARCHAR(255),
+--     games_played INT
+-- );
+
+-- CREATE TABLE fixtures (
+--     id SERIAL PRIMARY KEY,
+--     team1_id SERIAL REFERENCES teams(id),
+--     team2_id SERIAL REFERENCES teams(id)
+-- );
