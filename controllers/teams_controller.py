@@ -49,3 +49,25 @@ def delete_team(id):
 def show_team(id):
     team = team_repository.select(id)
     return render_template("clubs/players/index.html", team=team)
+
+
+# NEW
+@teams_blueprint.route("/clubs/new")
+def new_team():
+    return render_template("clubs/new.html")    
+
+# CREATE
+@teams_blueprint.route("/clubs", methods=["POST"])
+def create_team():
+    new_team = Team(team_name = request.form["team_name"],
+    location = request.form["location"],
+    stadium_name = request.form["stadium_name"],
+    stadium_capacity = request.form["stadium_capacity"],
+    fixtures_played = request.form["fixtures_played"],
+    fixtures_won = request.form["fixtures_won"],
+    fixtures_drawn = request.form["fixtures_drawn"],
+    fixtures_lost = request.form["fixtures_lost"],
+    points = request.form["points"],
+    score = request.form["score"])
+    team_repository.save(new_team)
+    return redirect("/clubs")

@@ -2,17 +2,17 @@
 {% block content %}
 
 <h1>Team information</h1>
-
+<p><a href="/clubs/new">Add a club</a></p>
 {% for team in teams %}
 <section>
 
     <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
+    <a href="/clubs/{{ team.id }}">Players</a>
     <a href="/clubs/{{ team.id }}/edit">Edit</a>
     
     <form action="/clubs/{{ team.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>
-    <a href="/clubs/{{ team.id }}">Players</a>
 
 </section>    
 
