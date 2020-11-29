@@ -10,5 +10,5 @@ fixtures_blueprint = Blueprint("fixtures", __name__)
 # INDEX
 @fixtures_blueprint.route("/fixtures")
 def fixtures():
-    # fixtures = fixture_repository.select_all()
+    fixtures = fixture_repository.select_all()
     return render_template("fixtures/index.html", fixtures=fixtures)

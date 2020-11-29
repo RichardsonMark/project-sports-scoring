@@ -20,7 +20,12 @@ def select_all():
     return teams
 
 
-
+def select(id):
+    sql = "SELECT * FROM teams WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    team = Team(result["team_name"], result["location"], result["stadium_name"], result["stadium_capacity"], result["fixtures_played"], result["fixtures_won"], result["fixtures_drawn"], result["fixtures_lost"], result["points"], result["score"], result["id"])
+    return team
 
 def delete_all():
     sql = "DELETE FROM teams"

@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-This is where fixture information will go.
+
+<h1>Fixture information</h1>
+
+{% for fixture in fixtures %}
+    <p>{{fixture.team1.team_name}} v {{fixture.team2.team_name}}</p>
+  
+{% endfor %}
 
 {% endblock %}
