@@ -1,6 +1,6 @@
 -- DROP TABLE IF EXISTS fixtures;
 DROP TABLE IF EXISTS teams;
--- DROP TABLE IF EXISTS players;
+DROP TABLE IF EXISTS players;
 
 
 CREATE TABLE teams (
@@ -17,12 +17,12 @@ CREATE TABLE teams (
     score INT
 );
 
--- CREATE TABLE players (
---     id SERIAL PRIMARY KEY,
---     name VARCHAR(255),
---     player_info VARCHAR(255),
---     games_played INT
--- );
+CREATE TABLE players (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    player_info VARCHAR(255),
+    goals_scored INT
+);
 
 -- CREATE TABLE fixtures (
 --     id SERIAL PRIMARY KEY,

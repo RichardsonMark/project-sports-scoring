@@ -17,4 +17,4 @@ class TestPlayer(unittest.TestCase):
 
 #    @unittest.skip("Delete this line to run the test")
     def test_player_has_games_played(self):
-        self.assertEqual(600, self.player.games_played)
+        self.assertEqual(600, self.player.goals_scored)

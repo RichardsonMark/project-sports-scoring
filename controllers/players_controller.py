@@ -7,8 +7,7 @@ players_blueprint = Blueprint("players", __name__)
 
 # INDEX
 @players_blueprint.route("/clubs/players")
-def humans():
-#    players = player_repository.select_all()
-    return render_template("clubs/players/index.html")
+def players():
+    players = player_repository.select_all()
+    return render_template("clubs/players/index.html", players=players)
 
-# add players=players in above once added select_all etc

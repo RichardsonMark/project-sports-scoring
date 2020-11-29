@@ -10,23 +10,23 @@ from models.team import Team
 import repositories.team_repository as team_repository
 
 # fixture_repository.delete_all()
-# player_repository.delete_all()
+player_repository.delete_all()
 team_repository.delete_all()
 
-# player_1 = Player("Maradona")
-# player_repository.save(player_1)
+player_1 = Player("Diego Armando Maradona", "Flawed genius. Mesmerised defenders as much as he mesmerised fans. The greatest player of his generation, if not all time.", 346)
+player_repository.save(player_1)
 
-# player_2 = Player("Pele")
-# player_repository.save(player_2)
+player_2 = Player("Pele", "The original greatest player in the world, all-time top goalscorer and scorer of the probably the best ever fictional goal with his overhead kick in Escape to Victory.", 1279)
+player_repository.save(player_2)
 
-# player_3 = Player("Zidane")
-# player_repository.save(player_3)
+player_3 = Player("Zinedine Zidane", "Remembered for his sublime control of the football, but also the occasional lack of control of his temper...", 126)
+player_repository.save(player_3)
 
-# player_4 = Player("Ronaldo (the Brazilian one!)")
-# player_repository.save(player_4)
+player_4 = Player("Ronaldo (the Brazilian one!)", "O Fenômeno. But for injuries and illness, surely we would not be debating who was the greatest player of all time.", 309)
+player_repository.save(player_4)
 
-# player_5 = Player("Ibrahimovic")
-# player_repository.save(player_5)
+player_5 = Player("Zlatan Ibrahimovic", "As is his way, Zlatan has the best quotes about Zlatan: We usually say that you cannot become a legend before death. But I am a living legend.", 600)
+player_repository.save(player_5)
 
 team_1 = Team("Napoli", "Naples, Italy", "Stadio San Paolo", 60000, 4, 0, 4, 0, 4, 0)
 team_repository.save(team_1)
