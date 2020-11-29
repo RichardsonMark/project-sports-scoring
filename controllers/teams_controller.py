@@ -35,3 +35,17 @@ def update_team(id):
     team = Team(team_name, location, stadium_name, stadium_capacity, fixtures_played, fixtures_won, fixtures_drawn, fixtures_lost, points, score, id)
     team_repository.update(team)
     return redirect("/clubs")
+
+
+# DELETE
+@teams_blueprint.route("/clubs/<id>/delete", methods=["POST"])
+def delete_team(id):
+    team_repository.delete(id)
+    return redirect("/clubs")
+
+
+# SHOW
+@teams_blueprint.route("/clubs/<id>")
+def show_team(id):
+    team = team_repository.select(id)
+    return render_template("clubs/players/index.html", team=team)
