@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section class="club-player-background">
+    <h1>Player information</h1>
 
-<h1>Player information</h1>
+    <button class="buttons"><a href="/clubs/players/new">Add a player</a></button>
 
-<p><a href="/clubs/players/new">Add a player</a></p>
+    <section id="grid-container-fixture-club-player">
+        {% for player in players %}
+        <section class="players">
+            <p>{{player.name}}: </p>
+            <p>{{player.player_info}}</p>
+            <p>Career goals: {{player.goals_scored}}</p>
 
+            <button class="buttons"><a href="/clubs/players/{{ player.id }}/edit">Edit</a></button>
 
-{% for player in players %}
-<section>
-    <p>{{player.name}}: {{player.player_info}} Career goals: {{player.goals_scored}}</p>
+            <form action="/clubs/players/{{ player.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
 
-    <a href="/clubs/players/{{ player.id }}/edit">Edit</a>
-    
-    <form action="/clubs/players/{{ player.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-
-</section>  
-{% endfor %}
-
+        </section>
+        {% endfor %}
+    </section>
+</section>
 {% endblock %}

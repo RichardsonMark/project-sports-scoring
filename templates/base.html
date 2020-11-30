@@ -10,6 +10,8 @@
 <body>
     <header>
         <h1>Fictional league</h1>
+    </header>
+    <div>
         <nav>
             <ul class="menu">
                 <li><a href="/">Home</a></li>
@@ -30,12 +32,14 @@
                 </li>
             </ul>
         </nav>
-    </header>
-    <div class="container">
-        {% block content %}
-        {% endblock %}
     </div>
-    <section>
+<div id="grid-container-content">
+
+    
+    {% block content %}
+    {% endblock %}
+        
+    <div class="mini-table">
         <h4>Table</h4>
         <table>
             <thead>
@@ -55,6 +59,8 @@
                 {% endfor %}
             </tbody>
         </table>
-    </section>
+    </div>
+
+</div>
 </body>
 </html>

@@ -1,22 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Team information</h1>
-<p><a href="/clubs/new">Add a club</a></p>
-{% for team in teams %}
-<section>
+<section class="club-player-background">
+    <h1>Team information</h1>
+    <button class="buttons"><a href="/clubs/new">Add a club</a></button>
+    <section id="grid-container-fixture-club-player">
+        {% for team in teams %}
+        <section class="clubs">
 
-    <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
-    <a href="/clubs/players">Players</a>
-    <a href="/clubs/{{ team.id }}/edit">Edit</a>
-    
-    <form action="/clubs/{{ team.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
+            <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
+            <a href="/clubs/players">Players</a>
+            <a href="/clubs/{{ team.id }}/edit">Edit</a>
 
-</section>   
+            <form action="/clubs/{{ team.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
 
-{% endfor %}
+        </section>
 
-
+        {% endfor %}
+    </section>
+</section>
 {% endblock %}

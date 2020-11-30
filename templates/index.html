@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="clubs">
+    {% for team in teams %}
+        <a href="/clubs/{{ team.id }}/edit">{{team.team_name}}</a>
+    {% endfor %}
+</div>
+<div class="main-text">
 <p>Welcome to the Fictional League home page. Learn more about the clubs and players and view fixtures and keep up to date with the league table.</p>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+</div>
 
 
 {% endblock %}
