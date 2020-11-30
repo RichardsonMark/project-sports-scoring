@@ -5,21 +5,23 @@
 
 <form action="/fixtures" method="POST">
     <div>
-        <label for="team1">Home Team (Team 1):</label>
-        <input 
-        type="text" 
-        id="team1" 
-        name="team1" 
-        placeholder="Home Team (Team 1)">
-    </div>
+        <label for="team1">Home Team:</label>
+        <select name="team1" id="team1">
+            {% for team in teams %}
+                <option value="{{ team.id }}">{{ team.team_name }}</option>
+                {{ team }}
+            {% endfor %}
+        </select>
+    </div> 
     <div>
-        <label for="team2">Away Team (Team 2):</label>
-        <input 
-        type="text" 
-        id="team2" 
-        name="team2" 
-        placeholder="Away Team (Team 2)">       
-    </div>
+        <label for="team2">Home Team:</label>
+        <select name="team2" id="team2">
+            {% for team in teams %}
+                <option value="{{ team.id }}">{{ team.team_name }}</option>
+                {{ team }}
+            {% endfor %}
+        </select>
+    </div> 
     <div>
         <input type="submit">
     </div>

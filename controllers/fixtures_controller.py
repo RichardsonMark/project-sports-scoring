@@ -47,7 +47,8 @@ def show_fixture(id):
 # NEW
 @fixtures_blueprint.route("/fixtures/new")
 def new_fixture():
-    return render_template("fixtures/new.html")    
+    teams = team_repository.select_all()
+    return render_template("fixtures/new.html", teams=teams)    
 
 # CREATE
 @fixtures_blueprint.route("/fixtures", methods=["POST"])

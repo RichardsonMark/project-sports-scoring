@@ -7,10 +7,11 @@ import repositories.team_repository as team_repository
 
 def save(fixture):
     sql = "INSERT INTO fixtures (team1_id, team2_id) VALUES (%s, %s) RETURNING id"
-    values = [fixture.team1.id, fixture.team2.id]
+    values = [fixture.team1, fixture.team2]
     results = run_sql(sql, values)
     id = results[0]['id']
     fixture.id = id
+    return fixture
 
 
 def select_all():
