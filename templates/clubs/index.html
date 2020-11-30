@@ -7,7 +7,7 @@
 <section>
 
     <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
-    <a href="/clubs/{{ team.id }}">Players</a>
+    <a href="/clubs/players">Players</a>
     <a href="/clubs/{{ team.id }}/edit">Edit</a>
     
     <form action="/clubs/{{ team.id }}/delete" method="POST">

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Fixture</h2>
+
+<form action="/clubs/players" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="player name">
+    </div>
+    <div>
+        <label for="player_info">Player Bio:</label>
+        <input class="text-box" type="text" id="player_info" name="player_info" placeholder="player info">       
+    </div>
+    <div>
+        <label for="goals_scored">Goals scored:</label>
+        <input type="number" id="goals_scored" name="goals_scored" placeholder="goals scored">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
