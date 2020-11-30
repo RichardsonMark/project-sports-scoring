@@ -18,7 +18,8 @@ def players():
 # NEW
 @players_blueprint.route("/clubs/players/new")
 def new_player():
-    return render_template("clubs/players/new.html")
+    teams = team_repository.select_all()
+    return render_template("clubs/players/new.html", teams=teams)
 
 
 # CREATE
@@ -36,7 +37,8 @@ def create_player():
 @players_blueprint.route("/clubs/players/<id>/edit")
 def edit_player(id):
     player = player_repository.select(id)
-    return render_template('clubs/players/edit.html', player=player)
+    teams = team_repository.select_all()
+    return render_template('clubs/players/edit.html', player=player, teams=teams)
 
 
 # UPDATE

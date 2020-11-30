@@ -2,12 +2,17 @@
 {% block content %}
 
 <div class="clubs">
-    {% for team in teams %}
-        <a href="/clubs/{{ team.id }}/edit">{{team.team_name}}</a>
-    {% endfor %}
+    <section id="grid-container-fixture-club-player">
+        {% for team in teams %}
+        <div class="small-clubs">
+            <a href="/clubs/{{ team.id }}/edit">{{team.team_name}}</a>
+        </div>
+        {% endfor %}
+    </section>
 </div>
 <div class="main-text">
-<p>Welcome to the Fictional League home page. Learn more about the clubs and players and view fixtures and keep up to date with the league table.</p>
+    <p>Welcome to the Fictional League home page. Learn more about the clubs and players and view fixtures and keep up
+        to date with the league table.</p>
 </div>
 
 

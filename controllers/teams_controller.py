@@ -16,7 +16,8 @@ def teams():
 @teams_blueprint.route("/clubs/<id>/edit")
 def edit_team(id):
     team = team_repository.select(id)
-    return render_template('clubs/edit.html', team=team)
+    teams = team_repository.select_all()
+    return render_template('clubs/edit.html', team=team, teams=teams)
 
 # UPDATE
 @teams_blueprint.route("/clubs/<id>", methods=["POST"])
@@ -54,7 +55,8 @@ def show_team(id):
 # NEW
 @teams_blueprint.route("/clubs/new")
 def new_team():
-    return render_template("clubs/new.html")    
+    teams = team_repository.select_all()
+    return render_template("clubs/new.html", teams=teams)    
 
 # CREATE
 @teams_blueprint.route("/clubs", methods=["POST"])

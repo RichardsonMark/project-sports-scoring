@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<content class="club-player-fixture-background">
 <h2>Update a Fixture</h2>
 
 <form action="/fixtures/{{ fixture.id }}" method="POST">
@@ -26,5 +26,5 @@
         <input type="submit">
     </div>
 </form>
-
+</content>
 {% endblock %}
