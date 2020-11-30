@@ -12,7 +12,7 @@ fixtures_blueprint = Blueprint("fixtures", __name__)
 def fixtures():
     fixtures = fixture_repository.select_all()
     teams = team_repository.select_all()
-    return render_template("fixtures/index.html", all_fixtures=fixtures, all_teams=teams)
+    return render_template("fixtures/index.html", all_fixtures=fixtures, teams=teams)
 
 
 # EDIT

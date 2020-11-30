@@ -25,7 +25,7 @@
                 </li>
                 <li>
                     <ul>
-                        <li><a href="/table">Table</a></li>
+                        <li><a href="/tables">Table</a></li>
                     </ul>
                 </li>
             </ul>
@@ -35,5 +35,26 @@
         {% block content %}
         {% endblock %}
     </div>
+    <section>
+        <h4>Table</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Played</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in teams %}
+                <tr>
+                    <td> <a href="/clubs/{{ team.id }}/edit">{{ team.team_name }}</a></td>
+                    <td>{{ team.fixtures_played }}</td>
+                    <td>{{ team.points }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>
