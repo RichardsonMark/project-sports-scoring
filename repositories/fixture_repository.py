@@ -25,6 +25,26 @@ def select_all():
     return fixtures
 
 
+def select(id):
+    sql = "SELECT * FROM fixtures WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    fixture = Fixture(result["team1_id"], result["team2_id"], result["id"])
+    return fixture
+
+
+def update(fixture):
+    sql = "UPDATE fixtures SET (team1, team2) = (%s, %s) WHERE id = %s"
+    values = [fixture.team1, fixture.team2, fixture.id]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM fixtures"
     run_sql(sql)
+
+
+def delete(id):
+    sql = "DELETE FROM fixtures WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

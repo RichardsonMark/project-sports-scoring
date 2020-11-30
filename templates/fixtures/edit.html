@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Fixture</h2>
+
+<form action="/fixtures/{{ fixture.id }}" method="POST">
+    <div>
+        <label for="team1">Home Team:</label>
+        <select name="team1" id="team1">
+            {% for team in teams %}
+                <option value="{{ team.team_name }}">{{ team.team_name }}</option>
+                {{ team }}
+            {% endfor %}
+        </select>
+    </div> 
+    <div>
+        <label for="team2">Away Team:</label>
+        <input type="text" id="team2" name="team2" value="{{ fixture.team2 }}">       
+    </div>
+
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% for fixture in all_fixtures %}
+
+{{ fixture.team1.team_name }} v 
+{% endfor %}
+
+{% endblock %}

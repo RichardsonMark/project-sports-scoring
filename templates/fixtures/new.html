@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Fixture</h2>
+
+<form action="/fixtures" method="POST">
+    <div>
+        <label for="team1">Home Team (Team 1):</label>
+        <input 
+        type="text" 
+        id="team1" 
+        name="team1" 
+        placeholder="Home Team (Team 1)">
+    </div>
+    <div>
+        <label for="team2">Away Team (Team 2):</label>
+        <input 
+        type="text" 
+        id="team2" 
+        name="team2" 
+        placeholder="Away Team (Team 2)">       
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
