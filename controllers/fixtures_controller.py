@@ -27,10 +27,11 @@ def edit_team(id):
 def update_team(id):
     team1 = request.form["team1"]
     team2 = request.form["team2"]
+    # team1.score = request.form["fixture.team1.score"]
+    # team2.score = request.form["fixture.team2.score"]
     
     fixture = Fixture(team1, team2, id)
     fixture_repository.update(fixture)
-
     return redirect("/fixtures")
 
 # DELETE
@@ -54,7 +55,11 @@ def new_fixture():
 # CREATE
 @fixtures_blueprint.route("/fixtures", methods=["POST"])
 def create_fixture():
-    new_fixture = Fixture(team1 = request.form["team1"],
-    team2 = request.form["team2"])
-    fixture_repository.save(new_fixture)
-    return redirect("/fixtures")
+    team1 = request.form["team1"]
+    team2 = request.form["team2"]
+    fixture = Fixture(team1, team2, id)
+    if (fixture.team1 == fixture.team2):
+        return redirect("/fixtures")
+    else:
+        fixture_repository.save(fixture)
+        return redirect("/fixtures")
