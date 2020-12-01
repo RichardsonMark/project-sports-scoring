@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Sports scoring app</title>
 </head>
+
 <body>
     <header>
         <h1>Fictional league</h1>
@@ -33,34 +35,35 @@
             </ul>
         </nav>
     </div>
-<div id="grid-container-content">
+    <div id="grid-container-content">
 
-    
-    {% block content %}
-    {% endblock %}
-        
-    <div class="mini-table">
-        <h4>Table</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Club</th>
-                    <th>Played</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for team in teams %}
-                <tr>
-                    <td> <a href="/clubs/{{ team.id }}/edit">{{ team.team_name }}</a></td>
-                    <td>{{ team.fixtures_played }}</td>
-                    <td>{{ team.points }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="mini-table">
+            <h4>Table</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Club</th>
+                        <th>Played</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for team in teams %}
+                    <tr>
+                        <td> <a href="/clubs/{{ team.id }}/edit">{{ team.team_name }}</a></td>
+                        <td>{{ team.fixtures_played }}</td>
+                        <td>{{ team.points }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
     </div>
-
-</div>
 </body>
+
 </html>

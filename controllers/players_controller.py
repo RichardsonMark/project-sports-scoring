@@ -16,6 +16,7 @@ def players():
 
 
 # NEW
+# GET '/clubs/players/new' --> show an html form to create a new player
 @players_blueprint.route("/clubs/players/new")
 def new_player():
     teams = team_repository.select_all()
@@ -23,6 +24,7 @@ def new_player():
 
 
 # CREATE
+# POST '/clubs/players' --> handle the post from the new form
 @players_blueprint.route("/clubs/players", methods=["POST"])
 def create_player():
     name = request.form["name"]
@@ -33,7 +35,15 @@ def create_player():
     return redirect("/clubs/players")
 
 
+# SHOW
+# GET '/clubs/players/<id>' --> show some html for a specific player
+@players_blueprint.route("/clubs/players/<id>")
+def show_team(id):
+    team = team_repository.select(id)
+    return render_template("clubs/players/show.html", team=team)
+
 # EDIT
+# GET '/clubs/players/<id>/edit' --> show some html form to edit a specific player
 @players_blueprint.route("/clubs/players/<id>/edit")
 def edit_player(id):
     player = player_repository.select(id)
@@ -42,6 +52,7 @@ def edit_player(id):
 
 
 # UPDATE
+# PUT '/clubs/players/<id>' --> handle the PUT from the edit form
 @players_blueprint.route("/clubs/players/<id>", methods=["POST"])
 def update_player(id):
     name = request.form["name"]
@@ -53,6 +64,7 @@ def update_player(id):
 
 
 # DELETE
+# DELETE '/clubs/players/<id>' --> handle the delete - to delete a specific task we can't use HTTP DELETE as HTML forms don'tdo DELETE
 @players_blueprint.route("/clubs/players/<id>/delete", methods=["POST"])
 def delete_player(id):
     player_repository.delete(id)

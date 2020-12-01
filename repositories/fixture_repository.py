@@ -5,6 +5,7 @@ import repositories.player_repository as player_repository
 from models.team import Team
 import repositories.team_repository as team_repository
 
+# add new fixture to database
 def save(fixture):
     sql = "INSERT INTO fixtures (team1_id, team2_id) VALUES (%s, %s) RETURNING id"
     values = [fixture.team1, fixture.team2]
@@ -13,7 +14,7 @@ def save(fixture):
     fixture.id = id
     return fixture
 
-
+# get all fixtures from database
 def select_all():
     fixtures = []
     sql = "SELECT * FROM fixtures"
@@ -25,7 +26,7 @@ def select_all():
         fixtures.append(fixture)
     return fixtures
 
-
+# get specific fixture from database
 def select(id):
     sql = "SELECT * FROM fixtures WHERE id = %s"
     values = [id]
@@ -33,18 +34,18 @@ def select(id):
     fixture = Fixture(result["team1_id"], result["team2_id"], result["id"])
     return fixture
 
-
+# update specific fixture in database
 def update(fixture):
     sql = "UPDATE fixtures SET (team1_id, team2_id) = (%s, %s) WHERE id = %s"
     values = [fixture.team1, fixture.team2, fixture.id]
     run_sql(sql, values)
 
-
+# delete all
 def delete_all():
     sql = "DELETE FROM fixtures"
     run_sql(sql)
 
-
+#delete specific entry
 def delete(id):
     sql = "DELETE FROM fixtures WHERE id = %s"
     values = [id]

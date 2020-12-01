@@ -6,15 +6,26 @@
 <form action="/clubs/players/{{ player.id }}" method="POST">
     <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ player.name }}">
+        <input type="text" 
+        id="name" 
+        name="name" 
+        value="{{ player.name }}"
+        >
     </div>
     <div>
         <label for="player_info">Player Bio:</label>
-        <input class="text-box" type="text" id="player_info" name="player_info" value="{{ player.player_info }}">       
+        <input class="text-box" type="text" id="player_info" 
+        name="player_info" 
+        value="{{ player.player_info }}"
+        >       
     </div>
     <div>
         <label for="goals_scored">Goals scored:</label>
-        <input type="number" id="goals_scored" name="goals_scored" value="{{ player.goals_scored }}">
+        <input type="number" 
+        id="goals_scored" 
+        name="goals_scored" 
+        value="{{ player.goals_scored }}"
+        >
     </div>
     <div>
         <input type="submit">

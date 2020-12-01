@@ -10,10 +10,11 @@
         <section class="fixtures">
             <p>{{fixture.team1.team_name}} v {{fixture.team2.team_name}}</p>
             {% if fixture.determine_winner() == None %}
-            <h4>The match ended inh a draw!</h4>
+            <h4>The match ended in a draw!</h4>
             {% else %}
-            <h4>{{ fixture.determine_winner() }} won, the final score was {{ fixture.team1.score }} - {{ fixture.team2.score }}.</h4>
-            
+            <h4>{{ fixture.determine_winner() }} won, the final score was {{ fixture.team1.score }} -
+                {{ fixture.team2.score }}.</h4>
+
             {% endif %}
 
 
@@ -29,11 +30,3 @@
 </section>
 
 {% endblock %}
-
-
-
-
-
-
-
-
