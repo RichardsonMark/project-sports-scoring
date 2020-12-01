@@ -24,7 +24,7 @@ class TestTeam(unittest.TestCase):
     def test_no_winner(self):
         self.assertEqual(1, self.team1.score)
         self.assertEqual(1, self.team2.score)
-        self.assertEqual("Draw", self.fixture.determine_winner(self.team1, self.team2))
+        self.assertEqual(None, self.fixture.determine_winner(self.team1, self.team2))
 
 #    @unittest.skip("Delete this line to run the test")
     def test_team1_winner(self):
@@ -32,7 +32,7 @@ class TestTeam(unittest.TestCase):
         self.fixture = Fixture(self.team1, self.team2)
         self.assertEqual(2, self.team1.score)
         self.assertEqual(1, self.team2.score)
-        self.assertEqual("Team 1", self.fixture.determine_winner(self.team1, self.team2))
+        self.assertEqual(self.fixture.team1.team_name, self.fixture.determine_winner(self.team1, self.team2))
 
 #    @unittest.skip("Delete this line to run the test")
     def test_team2_winner(self):
@@ -41,4 +41,12 @@ class TestTeam(unittest.TestCase):
         self.fixture = Fixture(self.team1, self.team2)
         self.assertEqual(1, self.team1.score)
         self.assertEqual(2, self.team2.score)
-        self.assertEqual("Team 2", self.fixture.determine_winner(self.team1, self.team2))
+        self.assertEqual(self.fixture.team2.team_name, self.fixture.determine_winner(self.team1, self.team2))
+
+
+    @unittest.skip("Delete this line to run the test")
+    def test_add_points_winner(self):
+        self.team1 = Team("Team 1", "Edinburgh, Scotland", "Murrayfield", 67000, 4, 0, 4, 0, 4, 3)
+        self.fixture = Fixture(4, self.team2)
+        self.assertEqual(4, self.team1.points)
+        self.assertEqual(7, self.fixture.add_points(self.team1, self.team2))

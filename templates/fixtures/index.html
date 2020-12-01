@@ -8,7 +8,13 @@
     <section id="grid-container-fixture-club-player">
         {% for fixture in all_fixtures %}
         <section class="fixtures">
-            <p>{{fixture.team1.team_name}} v {{fixture.team2.team_name}}</p>
+            <p>{{fixture.team1.team_name}} {{ fixture.team1.score }} v {{fixture.team2.team_name}} {{ fixture.team2.score }}</p>
+            {% if results == None %}
+            <h2>No winner!</h4>
+            {% else %}
+            <h4>{{ results }} wins!!!</h4>
+            {% endif %}
+
 
             <a href="/fixtures/{{ fixture.id }}/edit">Edit</a>
 
@@ -20,6 +26,7 @@
         {% endfor %}
     </section>
 </section>
+
 {% endblock %}
 
 
