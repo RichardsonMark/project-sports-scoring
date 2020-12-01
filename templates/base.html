@@ -54,7 +54,7 @@
                 <tbody>
                     {% for team in teams %}
                     <tr>
-                        <td> <a href="/clubs/{{ team.id }}/edit">{{ team.team_name }}</a></td>
+                        <td> <a href="/clubs/{{ team.id }}">{{ team.team_name }}</a></td>
                         <td>{{ team.fixtures_played }}</td>
                         <td>{{ team.points }}</td>
                     </tr>

@@ -9,7 +9,7 @@ import repositories.player_repository as player_repository
 from models.team import Team
 import repositories.team_repository as team_repository
 
-# fixture_repository.delete_all()
+fixture_repository.delete_all()
 player_repository.delete_all()
 team_repository.delete_all()
 

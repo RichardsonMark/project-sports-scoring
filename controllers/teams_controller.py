@@ -43,7 +43,8 @@ def create_team():
 @teams_blueprint.route("/clubs/<id>")
 def show_team(id):
     team = team_repository.select(id)
-    return render_template("clubs/show.html", team=team)
+    teams = team_repository.select_all()
+    return render_template("clubs/show.html", team=team, teams=teams)
 
 
 # EDIT

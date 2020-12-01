@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<content class="club-player-fixture-background">
+    <div>
+        <h3>{{team.team_name}}</h3>
+        <hr>
+        <p>Located: {{team.location}}</p>
+        <p>Home ground: {{team.stadium_name}}</p>
+        <p>Stadium capacity: {{team.stadium_capacity}}</p>
+    </div>
+    <a href="/clubs/players">Players</a>
+</content>
+{% endblock %}

@@ -39,8 +39,9 @@ def create_player():
 # GET '/clubs/players/<id>' --> show some html for a specific player
 @players_blueprint.route("/clubs/players/<id>")
 def show_team(id):
-    team = team_repository.select(id)
-    return render_template("clubs/players/show.html", team=team)
+    player = player_repository.select(id)
+    teams = team_repository.select_all()
+    return render_template("clubs/players/show.html", player=player, teams=teams)
 
 # EDIT
 # GET '/clubs/players/<id>/edit' --> show some html form to edit a specific player
