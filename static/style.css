@@ -1,8 +1,12 @@
 body{
-    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
-    background-image: url(https://images.unsplash.com/photo-1605002713581-123e77bcf83d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=720&q=80);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-image: url(https://images.unsplash.com/photo-1544636112-21c984350985?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+    /* backdrop-filter: blur(3px); */
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: 100%;
 }
 
 header {
@@ -28,7 +32,6 @@ label {
 
 .menu li a {
     display: flex;
-
     text-decoration: none;
 }
 
@@ -43,27 +46,11 @@ label {
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
 }
 
-  /* https://images.unsplash.com/photo-1542707067-91f05e1ac1fe?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80 */
-
-  /* https://images.unsplash.com/photo-1593701217945-831815ab0669?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1192&q=80 */
-
-  /* https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Signal_Iduna_Park%2C_Dortmund%2C_Germany_%28Unsplash_1hGAXyyav64%29.jpg/800px-Signal_Iduna_Park%2C_Dortmund%2C_Germany_%28Unsplash_1hGAXyyav64%29.jpg */
-
-  /* https://cdn.stocksnap.io/img-thumbs/960w/sport-venue_Y4M9C05O2Q.jpg */
-
-  /* https://www.michaellovins.com/wp-content/uploads/2020/03/marvin-ronsdorf-neIVhZEaBZE-unsplash-768x512.jpg */
-
-  /* https://images.unsplash.com/photo-1585569609560-dd6b15da1c11?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80 */
-
-  /* https://images.unsplash.com/photo-1551384732-fb4f003640e4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80 */
-
-  /* https://images.unsplash.com/photo-1519673287446-ebaf7eb9f8d8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1233&q=80 */
-
 
 .clubs {
     border: 1px solid #ccc;
     border-radius: 5px;
-    min-height: 200px;
+    height: fit-content;
     padding: 35px;
     line-height: 30px;
     margin-bottom: 10px;
@@ -80,12 +67,15 @@ label {
     background-color: white;
 }
 
+table > tbody > tr > td > a, div > a {
+    text-decoration: none;
+}
 
 .mini-table {
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 300px;
-    min-height: 200px;
+    height: fit-content;
     padding: 15px;
     font-size: small;
     line-height: 20px;
@@ -109,6 +99,7 @@ label {
 .main-text {
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: fit-content;
     padding: 15px;
     margin-bottom: 10px;
     background-color: white;
@@ -136,7 +127,7 @@ label {
 #grid-container-content {
     display: grid;
     grid-template-columns: 2fr 4fr 0fr;
-    grid-auto-rows: 250px;
+    /* grid-auto-rows: auto; */
 }
 
 #grid-container-fixture-club-player {
