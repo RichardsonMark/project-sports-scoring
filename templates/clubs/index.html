@@ -2,13 +2,16 @@
 {% block content %}
 
 <section class="club-player-fixture-background">
-    <h1>Team information</h1>
+    <h1>Club information</h1>
     <button class="buttons"><a href="/clubs/new">Add a club</a></button>
     <section id="grid-container-fixture-club-player">
         {% for team in teams %}
         <section class="clubs">
 
-            <p>{{team.team_name}}, {{team.location}}, {{team.stadium_name}}, {{team.stadium_capacity}}</p>
+            <h3>{{team.team_name}}</h3>
+                <p>Located: {{team.location}}</p>
+                <p>Home ground: {{team.stadium_name}}</p>
+                <p>Stadium capacity: {{team.stadium_capacity}}</p>
             <a href="/clubs/players">Players</a>
             <a href="/clubs/{{ team.id }}/edit">Edit</a>
 
