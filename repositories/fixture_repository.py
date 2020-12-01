@@ -35,7 +35,7 @@ def select(id):
 
 
 def update(fixture):
-    sql = "UPDATE fixtures SET (team1, team2) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE fixtures SET (team1_id, team2_id) = (%s, %s) WHERE id = %s"
     values = [fixture.team1, fixture.team2, fixture.id]
     run_sql(sql, values)
 

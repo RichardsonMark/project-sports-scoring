@@ -27,6 +27,13 @@ def select(id):
     team = Team(result["team_name"], result["location"], result["stadium_name"], result["stadium_capacity"], result["fixtures_played"], result["fixtures_won"], result["fixtures_drawn"], result["fixtures_lost"], result["points"], result["score"], result["id"])
     return team
 
+
+def update(team):
+    sql = "UPDATE teams SET (team_name, location, stadium_name, stadium_capacity, fixtures_played, fixtures_won, fixtures_drawn, fixtures_lost, points, score) = (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [team.team_name, team.location, team.stadium_name, team.stadium_capacity, team.fixtures_played, team.fixtures_won, team.fixtures_drawn, team.fixtures_lost, team.points, team.score, team.id]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM teams"
     run_sql(sql)
@@ -35,10 +42,4 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM teams WHERE id = %s"
     values = [id]
-    run_sql(sql, values)
-
-
-def update(team):
-    sql = "UPDATE teams SET (team_name, location, stadium_name, stadium_capacity, fixtures_played, fixtures_won, fixtures_drawn, fixtures_lost, points, score) = (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [team.team_name, team.location, team.stadium_name, team.stadium_capacity, team.fixtures_played, team.fixtures_won, team.fixtures_drawn, team.fixtures_lost, team.points, team.score, team.id]
     run_sql(sql, values)

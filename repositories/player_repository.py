@@ -27,6 +27,13 @@ def select(id):
     player = Player(result["name"], result["player_info"], result["goals_scored"], result["id"])
     return player
 
+
+def update(player):
+    sql = "UPDATE players SET (name, player_info, goals_scored) = (%s, %s, %s) WHERE id = %s"
+    values = [player.name, player.player_info, player.goals_scored, player.id]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM players"
     run_sql(sql)
@@ -36,10 +43,3 @@ def delete(id):
     sql = "DELETE FROM players WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
-
-def update(player):
-    sql = "UPDATE players SET (name, player_info, goals_scored) = %s, %s, %s WHERE id = %s"
-    values = [player.name, player.player_info, player.goals_scored, player.id]
-    run_sql(sql, values)
-    return player

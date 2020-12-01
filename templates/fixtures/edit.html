@@ -3,22 +3,31 @@
 <content class="club-player-fixture-background">
 <h2>Update a Fixture</h2>
 
+<!-- Setting up form to edit fixture, ensuring the teams from the fixture are displayed as the initial choices -->
 <form action="/fixtures/{{ fixture.id }}" method="POST">
     <div>
         <label for="team1">Home Team:</label>
-        <select name="team1" id="team1">
+        <select name="team1" id="team1" selected="{{ fixture.team1 }}">
             {% for team in teams %}
-                <option value="{{ team.id }}" {% if team.team_name == fixture.team_name %} selected {% endif %}>{{ team.team_name }}</option>
-                {{ team }}
+            {% if team.id == fixture.team1 %}
+            <option value="{{ team.id }}"selected>{{ team.team_name }}</option>
+            {% else %}
+              <option value="{{ team.id }}">{{ team.team_name }}</option>
+            {% endif %}
+                
             {% endfor %}
         </select>
     </div> 
     <div>
-        <label for="team2">Home Team:</label>
-        <select name="team2" id="team2">
+        <label for="team2">Away Team:</label>
+        <select name="team2" id="team2" selected="{{ fixture.team2 }}">
             {% for team in teams %}
-                <option value="{{ team.id }}" {% if team.id == team.id %} selected {% endif %}>{{ team.team_name }}</option>
-                {{ team }}
+            {% if team.id == fixture.team2 %}
+            <option value="{{ team.id }}"selected>{{ team.team_name }}</option>
+            {% else %}
+              <option value="{{ team.id }}">{{ team.team_name }}</option>
+            {% endif %}
+               
             {% endfor %}
         </select>
     </div> 
