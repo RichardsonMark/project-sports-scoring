@@ -9,10 +9,10 @@
         {% for fixture in all_fixtures %}
         <section class="fixtures">
             <p>{{fixture.team1.team_name}} {{ fixture.team1.score }} v {{fixture.team2.team_name}} {{ fixture.team2.score }}</p>
-            {% if results == None %}
-            <h2>No winner!</h4>
+            {% if fixture.determine_winner() == None %}
+            <h2>It's a draw!</h4>
             {% else %}
-            <h4>{{ results }} wins!!!</h4>
+            <h4>The win goes to {{ fixture.determine_winner() }}</h4>
             {% endif %}
 
 

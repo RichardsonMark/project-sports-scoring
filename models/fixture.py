@@ -10,13 +10,13 @@ class Fixture:
 
  
 # this function determines the winner of the fixture
-    def determine_winner(self, team1, team2):
+    def determine_winner(self):
         if self.team1.score == self.team2.score:
             return None
         elif self.team1.score > self.team2.score:
-            return team1.team_name
+            return self.team1.team_name
         elif self.team1.score < self.team2.score:
-            return team2.team_name
+            return self.team2.team_name
 
 #this function adds the points won to the team total in the table, add game played and game lost to losers stats
     # def add_points(self, team1, team2):

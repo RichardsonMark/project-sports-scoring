@@ -17,6 +17,7 @@ class TestTeam(unittest.TestCase):
         self.assertEqual("Team 1", self.team1.team_name)
         self.assertEqual("Team 2", self.team2.team_name)
         self.assertEqual("{team1.team_name}" + "v" + "{team2.team_name}", self.fixture.setup_fixture(self.team1, self.team2))
+  
 
 
 # testing function to determine the winner of the fixture/match/game
@@ -44,9 +45,9 @@ class TestTeam(unittest.TestCase):
         self.assertEqual(self.fixture.team2.team_name, self.fixture.determine_winner(self.team1, self.team2))
 
 
-    @unittest.skip("Delete this line to run the test")
-    def test_add_points_winner(self):
-        self.team1 = Team("Team 1", "Edinburgh, Scotland", "Murrayfield", 67000, 4, 0, 4, 0, 4, 3)
-        self.fixture = Fixture(4, self.team2)
-        self.assertEqual(4, self.team1.points)
-        self.assertEqual(7, self.fixture.add_points(self.team1, self.team2))
+    # @unittest.skip("Delete this line to run the test")
+    # def test_add_points_winner(self):
+    #     self.team1 = Team("Team 1", "Edinburgh, Scotland", "Murrayfield", 67000, 4, 0, 4, 0, 4, 3)
+    #     self.fixture = Fixture(4, self.team2)
+    #     self.assertEqual(4, self.team1.points)
+    #     self.assertEqual(7, self.fixture.add_points(self.team1, self.team2))

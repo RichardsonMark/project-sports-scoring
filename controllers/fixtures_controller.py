@@ -43,10 +43,7 @@ def delete_fixture(id):
 @fixtures_blueprint.route("/fixtures/<id>")
 def show_fixture(id):
     fixture = fixture_repository.select(id)
-    team1 = fixture.team1
-    team2 = fixture.team2
-    result = fixture.determine_winner(team1, team2)
-    return render_template("fixtures/index.html", fixture=fixture, result=result)
+    return render_template("fixtures/index.html", fixture=fixture)
 
 # NEW
 @fixtures_blueprint.route("/fixtures/new")
