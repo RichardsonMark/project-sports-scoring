@@ -1,5 +1,22 @@
 from db.run_sql import run_sql
 from models.player import Player
+from models.team import Team
+import repositories.team_repository as team_repository
+
+
+# add player to team
+def teams(player):
+    teams = []
+
+    sql ="SELECT * FROM teams WHERE player_id = %s"
+    values = [player.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        team = Team(row["team_name"], row["location"], row["stadium_name"], row["stadium_capacity"], row["fixtures_played"], row["fixtures_won"], row["fixtures_drawn"], row["fixtures_lost"], row["points"], row["score"], player, row["id"])
+        teams.append(team)
+    return teams
+
 
 # add new player to database
 def save(player):

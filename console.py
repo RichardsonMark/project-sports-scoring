@@ -28,19 +28,19 @@ player_repository.save(player_4)
 player_5 = Player("Zlatan Ibrahimovic", "As is his way, Zlatan has the best quotes about Zlatan: We usually say that you cannot become a legend before death. But I am a living legend.", 470)
 player_repository.save(player_5)
 
-team_1 = Team("Napoli", "Naples, Italy", "Stadio San Paolo", 60000, 4, 0, 4, 0, 4, 0)
+team_1 = Team("Napoli", "Naples, Italy", "Stadio San Paolo", 60000, 4, 0, 4, 0, 4, 0, player_1)
 team_repository.save(team_1)
 
-team_2 = Team("Santos", "Sao Paulo, Brazil", "Estádio Urbano Caldeira (Vila Belmiro)", 16000, 4, 0, 4, 0, 4, 0)
+team_2 = Team("Santos", "Sao Paulo, Brazil", "Estádio Urbano Caldeira (Vila Belmiro)", 16000, 4, 0, 4, 0, 4, 0, player_2)
 team_repository.save(team_2)
 
-team_3 = Team("Juventus", "Turin, Italy", "Juventus Stadium", 41000, 4, 0, 4, 0, 4, 2)
+team_3 = Team("Juventus", "Turin, Italy", "Juventus Stadium", 41000, 4, 0, 4, 0, 4, 2, player_3)
 team_repository.save(team_3)
 
-team_4 = Team("Barcelona", "Barcelona, Catalonia, Spain", "Camp Nou", 99000, 4, 0, 4, 0, 4, 1)
+team_4 = Team("Barcelona", "Barcelona, Catalonia, Spain", "Camp Nou", 99000, 4, 0, 4, 0, 4, 1, player_4)
 team_repository.save(team_4)
 
-team_5 = Team("AC Milan", "Milan, Italy", "Stadio Giuseppe Meazza (San Siro)", 80000, 4, 0, 4, 0, 4, 0)
+team_5 = Team("AC Milan", "Milan, Italy", "Stadio Giuseppe Meazza (San Siro)", 80000, 4, 0, 4, 0, 4, 0, player_5)
 team_repository.save(team_5)
 
 fixture_1 = Fixture(team_1, team_2)

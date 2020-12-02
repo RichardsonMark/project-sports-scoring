@@ -15,13 +15,14 @@ CREATE TABLE teams (
     fixtures_lost INT,
     points INT,
     score INT
+    player_id SERIAL REFERENCES players(id) ON DELETE CASCADE
 );
 
 CREATE TABLE players (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     player_info VARCHAR(255),
-    goals_scored INT
+    goals_scored INT,
 );
 
 CREATE TABLE fixtures (
