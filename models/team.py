@@ -9,7 +9,7 @@ class Team:
         self.fixtures_drawn = fixtures_drawn
         self.fixtures_lost = fixtures_lost
         self.points = points
-        self.score = score
+        self.score = score   #### could remove from here and add to fixtures, would need to update logic
         self.id = id
 
 

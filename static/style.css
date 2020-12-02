@@ -67,7 +67,7 @@ label {
     background-color: white;
 }
 
-table > tbody > tr > td > a, div > a {
+table > tbody > tr > td > a, div > a, button > a {
     text-decoration: none;
 }
 

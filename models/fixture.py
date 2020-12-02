@@ -3,6 +3,7 @@ class Fixture:
         self.team1 = team1
         self.team2 = team2
         self.id = id
+# future functionality - add team scores here to allow editing in fixture (remove from team.py)
 
 # this function sets up a fixture
     def setup_fixture(self, team1, team2):

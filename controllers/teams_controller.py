@@ -2,6 +2,8 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.team import Team
 import repositories.team_repository as team_repository
+import repositories.fixture_repository as fixture_repository
+
 
 teams_blueprint = Blueprint("teams", __name__)
 
@@ -44,7 +46,8 @@ def create_team():
 def show_team(id):
     team = team_repository.select(id)
     teams = team_repository.select_all()
-    return render_template("clubs/show.html", team=team, teams=teams)
+    fixtures = fixture_repository.select_all()
+    return render_template("clubs/show.html", team=team, teams=teams, fixtures=fixtures)
 
 
 # EDIT
